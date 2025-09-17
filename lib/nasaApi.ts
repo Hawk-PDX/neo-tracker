@@ -67,7 +67,7 @@ class NASAApiService {
    */
   async getAstronomyPictureOfDay(date?: Date): Promise<APODResponse> {
     try {
-      const params: any = {};
+      const params: { date?: string } = {};
       if (date) {
         params.date = format(date, 'yyyy-MM-dd');
       }

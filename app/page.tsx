@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import MeteorList from '@/components/MeteorList';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import { nasaApi } from '@/lib/nasaApi';
@@ -96,9 +97,11 @@ export default function Home() {
         {/* Astronomy Picture of the Day */}
         {apod && apod.media_type === 'image' && (
           <div className="mb-8 bg-white rounded-lg shadow-lg overflow-hidden">
-            <img
+            <Image
               src={apod.url}
               alt={apod.title}
+              width={800}
+              height={256}
               className="w-full h-64 object-cover"
             />
             <div className="p-6">
