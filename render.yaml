@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: pdx-meteor-tracker
+    runtime: node
+    plan: free
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NEXT_PUBLIC_NASA_API_KEY
+        sync: false # This will be set in the Render dashboard
+    autoDeploy: true
+    branch: main
