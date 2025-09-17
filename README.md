@@ -1,6 +1,8 @@
-# 🌠 PDX Meteor Tracker
+# ✨ PDX Meteor Tracker ✨
 
 A modern Next.js application for tracking Near Earth Objects (NEOs) and meteors approaching our planet, built with real-time data from NASA's Open Data Portal.
+
+⚡⚡⚡ [Live Demo](https://neo-tracker.onrender.com)
 
 ## Features
 

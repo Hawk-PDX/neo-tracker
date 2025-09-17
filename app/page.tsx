@@ -6,6 +6,15 @@ import MeteorList from '@/components/MeteorList';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import { nasaApi } from '@/lib/nasaApi';
 import type { MeteorEvent, APODResponse } from '@/types/meteor';
+import { FaRocket } from 'react-icons/fa'
+
+// Reusable title component
+const AppTitle = ({ className = "" }: { className?: string }) => (
+  <h1 className={`text-4xl font-bold text-gray-900 ${className}`}>
+    <FaRocket className="text-blue-500 inline mr-2" /> 
+    Hangtime Dot Devs - NEO Tracker
+  </h1>
+);
 
 export default function Home() {
   const [meteors, setMeteors] = useState<MeteorEvent[]>([]);
@@ -43,9 +52,7 @@ export default function Home() {
       <div className="min-h-screen bg-gray-50">
         <div className="container mx-auto px-4 py-8">
           <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-gray-900 mb-2">
-              🌠 PDX Meteor Tracker
-            </h1>
+            <AppTitle className="mb-2" />
             <p className="text-lg text-gray-600">
               Track Near Earth Objects and meteors approaching our planet
             </p>
@@ -61,9 +68,7 @@ export default function Home() {
       <div className="min-h-screen bg-gray-50">
         <div className="container mx-auto px-4 py-8">
           <div className="text-center">
-            <h1 className="text-4xl font-bold text-gray-900 mb-8">
-              🌠 PDX Meteor Tracker
-            </h1>
+            <AppTitle className="mb-8" />
             <div className="bg-red-50 border border-red-200 rounded-lg p-6 max-w-md mx-auto">
               <div className="text-red-600 text-6xl mb-4">⚠️</div>
               <h2 className="text-xl font-semibold text-red-900 mb-2">Error Loading Data</h2>
@@ -86,9 +91,7 @@ export default function Home() {
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">
-            🌠 PDX Meteor Tracker
-          </h1>
+          <AppTitle className="mb-2" />
           <p className="text-lg text-gray-600">
             Track Near Earth Objects and meteors approaching our planet
           </p>
